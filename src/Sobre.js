@@ -1,10 +1,10 @@
-
 import './App.css';
 
 function Pagina() {
   return (
     <div className="App">
-<p>AVEIRO CITY</p>
+
+<p>SOBRE</p>
     </div>
   );
 }

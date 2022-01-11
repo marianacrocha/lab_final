@@ -1,12 +1,15 @@
 import './App.css';
 import React, {useState} from "react";
+import {Link} from "react-router-dom";
 
 
 function Nav() {
   return (
-    <nav className="nav">
-        <div className="nav-container">
-            <p>log in, cidades, sobre nós, etc</p>
+    <nav className="navbar">
+        <div className="navbar-container">
+            <Link to="/Pagina" className="linknav">  Cidades </Link>
+            <Link to="/Sobre" className="linknav">  Sobre </Link>
+
         </div>
     </nav>
   );
