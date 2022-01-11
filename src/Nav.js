@@ -1,11 +1,14 @@
-import logo from './logo.svg';
 import './App.css';
+import React, {useState} from "react";
+
 
 function Nav() {
   return (
-    <div className="App">
-     <p>oi mariana</p>
-    </div>
+    <nav className="nav">
+        <div className="nav-container">
+            <p>log in, cidades, sobre nós</p>
+        </div>
+    </nav>
   );
 }
 
