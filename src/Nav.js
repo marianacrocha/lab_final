@@ -6,7 +6,7 @@ function Nav() {
   return (
     <nav className="nav">
         <div className="nav-container">
-            <p>log in, cidades, sobre nós</p>
+            <p>log in, cidades, sobre nós, etc</p>
         </div>
     </nav>
   );
