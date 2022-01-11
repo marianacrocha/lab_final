@@ -1,12 +1,12 @@
 import logo from './logo.svg';
 import './App.css';
 
-function App() {
+function Pagina() {
   return (
     <div className="App">
-     <p>oi mariana</p>
+     <p>oi kjbaefkjd</p>
     </div>
   );
 }
 
-export default App;
+export default Pagina;
