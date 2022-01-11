@@ -4,7 +4,7 @@ import './App.css';
 function Pagina() {
   return (
     <div className="App">
-     <p>oi kjbaefkjd</p>
+
     </div>
   );
 }
