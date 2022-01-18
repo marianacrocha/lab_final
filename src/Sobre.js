@@ -1,6 +1,6 @@
 import './App.css';
 
-function Pagina() {
+function Sobre() {
   return (
     <div className="App">
 
@@ -9,4 +9,4 @@ function Pagina() {
   );
 }
 
-export default Pagina;
+export default Sobre;
