@@ -4,22 +4,22 @@ import React from "react";
 class App_ipma extends React.Component {
     state = {
         loading: true,
-        cidades: null,
+        lista: [],
     }
 
-    lista = []
+
 
     async componentDidMount() {
         const url = "https://api.ipma.pt/open-data/distrits-islands"
         const response = await fetch(url);
         const cidades = await response.json();
 
-        this.lista = cidades.data.map((item)=><div>idDistrito: {item.idDistrito}, local: {item.local}</div>)
-
+        this.state.lista = cidades.data.map((item)=><div>idDistrito: {item.idDistrito}, local: {item.local}</div>)
+        console.log("dentro" + this.state.lista)
     }
 
     render() {
-
+console.log(this.state.lista)
         if (!this.state.loading) {
         return  (
             <div>
