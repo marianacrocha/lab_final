@@ -1,5 +1,5 @@
 .cards {
-    padding: 4rem;
+
     background: #fff;
 }
 
@@ -18,7 +18,6 @@ h1 {
 
 .cards_wrapper {
     position: relative;
-    margin: 50px 0 45px;
 }
 
 .cards_items {
