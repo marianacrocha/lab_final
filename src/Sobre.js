@@ -4,7 +4,8 @@ function Sobre() {
   return (
     <div className="App">
 
-<p>SOBRE</p>
+<h1>SOBRE</h1>
+        <p>Esta página contém informação relativa ao nosso site</p>
     </div>
   );
 }
