@@ -12,6 +12,8 @@ function Pagina() {
   //  const [carregando, setCarregando] = useState(false);
     const [temperaturaCidade, setTemperaturaCidade] = useState();
 
+
+
     useEffect(() =>{
         fetch('https://api.ipma.pt/open-data/distrits-islands.json')
             .then((res) => res.json())
@@ -22,6 +24,8 @@ function Pagina() {
             });
 
     }, []);
+
+
     useEffect(() =>{
 
         fetch('https://goweather.herokuapp.com/weather/aveiro')
@@ -64,7 +68,7 @@ function Pagina() {
             <div className='container-fluid'>
                 <div className="row justify-content-center mt-5 ">
                     <h1> Observa a metereologia em todas as cidades de Portugal!</h1>
-                    <textarea placeholder="Pesquisa por uma cidade..." className="col-6" >
+                    <textarea placeholder="Pesquisa por uma cidade..." className="col-6">
 
             </textarea>
                 </div>

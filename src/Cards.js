@@ -22,11 +22,11 @@ function Cards() {
 
     }, []);
 
-    let cidade = distrito[6]
-    console.log("este" + cidade)
+   // let cidade = distrito[2]
+    console.log("sim")
     useEffect(() =>{
 
-        fetch('https://goweather.herokuapp.com/weather/${cidade}')
+        fetch('https://goweather.herokuapp.com/weather/aveiro')
         .then((res) => res.json())
         .then((weather) => {
 
