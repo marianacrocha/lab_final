@@ -4,7 +4,7 @@ import Pagina from "./Pagina";
 import Footer from "./Footer";
 import Nav from "./Nav";
 import Sobre from "./Sobre";
-import Home from "./Home";
+import Cards from "./Cards";
 
 
 function Main() {
@@ -13,7 +13,7 @@ function Main() {
         <Router>
             <Nav></Nav>
             <Routes>
-                <Route path='/Home' element={<Home/>}/>
+                <Route path='/Home' element={<Cards/>}/>
                 <Route path='/Pagina' element={<Pagina/>}/>
                 <Route path='/Sobre' element={<Sobre/>}/>
             </Routes>

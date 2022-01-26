@@ -1,4 +1,3 @@
-
 import CardItem from "./CardItem";
 import './Cards.css'
 import React, {useState, useEffect}from "react";
@@ -11,8 +10,6 @@ function Cards() {
     const [mostrarConteudo, setMostrarConteudo] = useState(false);
     const [carregando, setCarregando] = useState(false);
     const [temperaturaCidade, setTemperaturaCidade] = useState();
-    const [ventoCidade, setVentoCidade] = useState();
-
 
     useEffect(() =>{
         fetch('https://api.ipma.pt/open-data/distrits-islands.json')
@@ -20,26 +17,30 @@ function Cards() {
             .then((json) => {
                 let distritos = json.data.map((item)=> item)
                 setDistrito(distritos);
-                console.log(distritos)
+               // console.log(distritos)
             });
 
     }, []);
+    useEffect(() =>{
+
+        fetch('https://goweather.herokuapp.com/weather/aveiro')
+        .then((res) => res.json())
+        .then((weather) => {
+
+            setTemperaturaCidade(weather.temperature);
+            console.log(weather.temperature)
+
+            setCarregando(false);
+            setMostrarConteudo(true);
+        }); }, []);
+
+
+
 
     if (distrito.length>0) {
-        const url = "https://goweather.herokuapp.com/weather/${dist.local}"
-        const response = fetch(url);
-        const weather = response.json();
-
-        setTemperaturaCidade(weather.temperature);
-        console.log(weather.temperature)
-        setVentoCidade(weather.wind);
-
-        setCarregando(false);
-        setMostrarConteudo(true);
 
 
-        let arr = distrito.map((dist)=>{
-
+        let arr = distrito.slice(0,3).map((dist)=>{
 
             return(
 
@@ -50,7 +51,7 @@ function Cards() {
                             <CardItem
                                 src="imagens/aveiro.jpg"
                                 text={dist.local}
-                                label={dist.local}
+                                label={temperaturaCidade}
                                 path='/services'
                             />
                         </ul>
