@@ -12,7 +12,7 @@ function Main() {
 
         <Router>
             <Nav></Nav>
-            <Cards></Cards>
+
             <Routes>
                 <Route path='/Home' element={<Cards/>}/>
                 <Route path='/Pagina' element={<Pagina/>}/>

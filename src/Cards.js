@@ -21,14 +21,17 @@ function Cards() {
             });
 
     }, []);
+
+    let cidade = distrito[6]
+    console.log("este" + cidade)
     useEffect(() =>{
 
-        fetch('https://goweather.herokuapp.com/weather/aveiro')
+        fetch('https://goweather.herokuapp.com/weather/${cidade}')
         .then((res) => res.json())
         .then((weather) => {
 
             setTemperaturaCidade(weather.temperature);
-            console.log(weather.temperature)
+          //  console.log(weather.temperature)
 
             setCarregando(false);
             setMostrarConteudo(true);

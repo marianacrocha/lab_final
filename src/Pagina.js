@@ -62,9 +62,16 @@ function Pagina() {
 
         return (    <div className='cards'>
             <div className='container-fluid'>
+                <div className="row justify-content-center mt-5 ">
+                    <h1> Observa a metereologia em todas as cidades de Portugal!</h1>
+                    <textarea placeholder="Pesquisa por uma cidade..." className="col-6" >
+
+            </textarea>
+                </div>
                 <div className="row mt-5 ">
                     {arr}
                 </div>
+
             </div>
         </div>)
     }
