@@ -14,6 +14,7 @@ function Main() {
             <Nav></Nav>
 
             <Routes>
+                <Route path='/' element={<Cards/>}/>
                 <Route path='/Home' element={<Cards/>}/>
                 <Route path='/Pagina' element={<Pagina/>}/>
                 <Route path='/Sobre' element={<Sobre/>}/>
