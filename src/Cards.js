@@ -82,7 +82,7 @@ useEffect(()=> {
         // console.log(distritos)
 
         return it; })
-}, [distrito])
+}, [distrito, temp])
 
 
     if (distrito.length>3 || temp.length>3) {

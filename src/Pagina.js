@@ -1,5 +1,6 @@
 import CidadeItem from "./CidadeItem";
 import './Cards.css'
+import axios from 'axios';
 import React, {useState, useEffect} from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -7,40 +8,68 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 function Pagina() {
 
     const [distrito, setDistrito] = useState([])
-    //  const [mostrarConteudo, setMostrarConteudo] = useState(false);
-    //  const [carregando, setCarregando] = useState(false);
-    const [temperaturaCidade, setTemperaturaCidade] = useState();
+    const [carregando, setCarregando] = useState(false);
+    const [temp, setTemp] = useState([])
+    const [search, setSearch] = useState('')
+
 
 
     useEffect(() => {
         fetch('https://api.ipma.pt/open-data/distrits-islands.json')
             .then((res) => res.json())
             .then((json) => {
-                let distritos = json.data.map((item) => item)
+                let distritos = json.data.map((item)=> {
+                    //     console.log(item)
+                    return   item;
+                })
                 setDistrito(distritos);
-                // console.log(distritos)
+
             });
 
     }, []);
 
 
-    useEffect(() => {
+    useEffect(()=> {
+        console.log("olá")
+        let temp2 =[];
+        distrito.forEach((it)=>{
+            fetch("https://goweather.herokuapp.com/weather/"+it.local)
+                .then((res) => res.json())
+                .then((weather) => {
 
-        fetch('https://goweather.herokuapp.com/weather/aveiro')
-            .then((res) => res.json())
-            .then((weather) => {
+                    if (weather.temperature === undefined) {
+                        temp.push("não disponível")
+                    } else {
+                        temp.push(weather.temperature)
 
-                setTemperaturaCidade(weather.temperature);
-                console.log(weather.temperature)
+                    }
+
+
+                }).then(()=>{
+
+                setTemp(temp)
+                console.log(temp)
+                if(temp.length==35){
+                    setCarregando(temp);
+                }
 
             });
-    }, []);
+
+            // console.log(distritos)
+
+            return it; })
+    }, [distrito])
 
 
-    if (distrito.length > 0) {
 
 
-        let arr = distrito.map((dist) => {
+    if (distrito.length > 3|| temp.length>3) {
+
+
+        let arr = distrito.filter((dist) =>{
+            if (search==""){ return dist;}
+            else if(dist.local.toLowerCase().includes(search.toLowerCase())){return dist;}
+        }).map((dist, index) => {
 
             return (
                 <div className="col-xl-4 col-md-6 p-0">
@@ -49,7 +78,7 @@ function Pagina() {
                             <CidadeItem
                                 src="imagens/aveiro.jpg"
                                 text={dist.local}
-                                label={temperaturaCidade}
+                                label={temp[index]}
                                 path='/services'
                             />
                         </ul>
@@ -62,9 +91,7 @@ function Pagina() {
             <div className='container-fluid'>
                 <div className="row justify-content-center mt-5 ">
                     <h1> Observa a metereologia em todas as cidades de Portugal!</h1>
-                    <textarea placeholder="Pesquisa por uma cidade..." className="col-6">
-
-            </textarea>
+                   <input className="textarea" type="text" placeholder="Pesquisa por uma cidade..." onChange={event =>{setSearch(event.target.value)} } />
                 </div>
                 <div className="row mt-5 ">
                     {arr}
