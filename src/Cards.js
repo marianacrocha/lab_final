@@ -3,7 +3,6 @@ import './Cards.css'
 import React, {useState, useEffect}from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {Link} from "react-router-dom";
-import CardsDetails from "./CardsDetails";
 
 
 function Cards() {
@@ -91,6 +90,7 @@ useEffect(()=> {
 
         let arr = distrito.slice(0,3).map((dist, index)=>{
            let imagem = "imagens/" + dist.local + ".jpg"
+
            // console.log(temp.length)
             //console.log (temp[index])
             return(
@@ -102,7 +102,7 @@ useEffect(()=> {
                                 src={imagem}
                                 text={dist.local}
                                 label={temp[index]}
-                                path='/CardsDetails'
+                                path="/"
                             />
 
                         </ul>

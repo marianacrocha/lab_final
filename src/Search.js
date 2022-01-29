@@ -13,7 +13,7 @@ function Search(searchQuery, setSearchQuery) {
                 onInput={e => setSearchQuery(e.target.value)}
                 type="text"
                 id="header-search"
-                placeholder="Search blog posts"
+                placeholder="Pesquisa por uma cidade..."
                 name="s"
             />
             <button type="submit">Search</button>

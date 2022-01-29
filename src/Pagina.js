@@ -77,7 +77,7 @@ function Pagina() {
                                 src={imagem}
                                 text={dist.local}
                                 label={temp[index]}
-                                path='/services'
+                                path='/'
                             />
                         </ul>
                     </div>

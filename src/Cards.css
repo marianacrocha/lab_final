@@ -18,8 +18,6 @@
     font-size: larger;
     background-color: #282c34;
     text-decoration: none;
-    align-items: center;
-    justify-content: center;
 
 }
 
@@ -115,7 +113,9 @@ h1 {
 
 .cards_item_img:hover {
     transform: scale(1.1);
+
 }
+
 
 .cards_item_info {
     padding: 20px 30px 30px;
