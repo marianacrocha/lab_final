@@ -10,6 +10,26 @@
     height: 38px;
 }
 
+.butao {
+    border: #282c34 solid thick;
+    border-radius: 5px;
+    color:white;
+    font-weight: bold;
+    font-size: larger;
+    background-color: #282c34;
+    text-decoration: none;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.butao:hover {
+    background-color:#3f4552 ;
+    border-color: #3f4552;
+    color: white;
+    text-decoration: none;
+}
+
 h1 {
     text-align: center;
     margin-bottom: 10px ;

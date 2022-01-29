@@ -2,6 +2,8 @@ import CardItem from "./CardItem";
 import './Cards.css'
 import React, {useState, useEffect}from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
+import {Link} from "react-router-dom";
+import CardsDetails from "./CardsDetails";
 
 
 function Cards() {
@@ -88,6 +90,7 @@ useEffect(()=> {
     if (distrito.length>3 || temp.length>3) {
 
         let arr = distrito.slice(0,3).map((dist, index)=>{
+           let imagem = "imagens/" + dist.local + ".jpg"
            // console.log(temp.length)
             //console.log (temp[index])
             return(
@@ -96,11 +99,13 @@ useEffect(()=> {
                         <ul className='cards_items'>
 
                             <CardItem
-                                src="imagens/aveiro.jpg"
+                                src={imagem}
                                 text={dist.local}
                                 label={temp[index]}
-                                path='/services'
+                                path='/CardsDetails'
                             />
+                            <CardsDetails
+                            cidade = {dist.local}/>
                         </ul>
 
                     </div>
@@ -113,11 +118,18 @@ useEffect(()=> {
                 <div className="row mt-5 ">
                 {arr}
                 </div>
+                <div className="justify-content-center">
+                <div className="my-5 text-center">
+                    <Link to="/Pagina" className="butao px-2 py-1">  Ver todas ►</Link>
+
+                </div>
+
+                </div>
             </div>
                     </div>)
     }
     else {
-        return (<div>nada</div>)
+        return (<div>loading</div>)
     }
 }
 

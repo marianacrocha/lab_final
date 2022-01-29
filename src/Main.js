@@ -5,6 +5,7 @@ import Footer from "./Footer";
 import Nav from "./Nav";
 import Sobre from "./Sobre";
 import Cards from "./Cards";
+import CardsDetails from "./CardsDetails";
 
 
 function Main() {
@@ -18,6 +19,7 @@ function Main() {
                 <Route path='/Home' element={<Cards/>}/>
                 <Route path='/Pagina' element={<Pagina/>}/>
                 <Route path='/Sobre' element={<Sobre/>}/>
+                <Route path='/CardsDetails' element={<CardsDetails/>}/>
             </Routes>
             <Footer></Footer>
         </Router>

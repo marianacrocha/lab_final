@@ -44,12 +44,12 @@
 
 .footer {
   background-color: #282c34;
-  height: 150px;
+  height: 130px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(1px + 2vmin);
+  font-size: calc(1px + 1.5vmin);
   color: white;
 }
 
@@ -57,11 +57,9 @@
   color: white;
   text-decoration: none;
   transition: 0.3s;
-  padding: 0 40px;
-}
-
-.textofooter:hover {
-  color: #61dafb;
+margin: 8px;
+  align-content: center;
+  text-align: center;
 }
 
 

@@ -1,6 +1,5 @@
 import CidadeItem from "./CidadeItem";
-import './Cards.css'
-import axios from 'axios';
+import './Cards.css';
 import React, {useState, useEffect} from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -23,9 +22,7 @@ function Pagina() {
                     return   item;
                 })
                 setDistrito(distritos);
-
             });
-
     }, []);
 
 
@@ -70,13 +67,14 @@ function Pagina() {
             if (search==""){ return dist;}
             else if(dist.local.toLowerCase().includes(search.toLowerCase())){return dist;}
         }).map((dist, index) => {
+            let imagem = "imagens/" + dist.local + ".jpg"
 
             return (
                 <div className="col-xl-4 col-md-6 p-0">
                     <div className='cards_wrapper'>
                         <ul className='cards_items'>
                             <CidadeItem
-                                src="imagens/aveiro.jpg"
+                                src={imagem}
                                 text={dist.local}
                                 label={temp[index]}
                                 path='/services'
