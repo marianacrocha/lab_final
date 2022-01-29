@@ -104,8 +104,7 @@ useEffect(()=> {
                                 label={temp[index]}
                                 path='/CardsDetails'
                             />
-                            <CardsDetails
-                            cidade = {dist.local}/>
+
                         </ul>
 
                     </div>
