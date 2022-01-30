@@ -38,10 +38,7 @@ function Pagina() {
                         temp.push("não disponível")
                     } else {
                         temp.push(weather.temperature)
-
                     }
-
-
                 }).then(()=>{
 
                 setTemp(temp)
@@ -97,6 +94,8 @@ function Pagina() {
 
             </div>
         </div>)
+
+
     } else {
         return (<div></div>)
     }

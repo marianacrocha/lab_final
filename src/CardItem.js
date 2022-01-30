@@ -5,7 +5,6 @@ import "./Cards.css"
 
 function CardItem(props) {
     return (
-
             <li className="cards_item">
                 <div className="cards_item_link" >
                     <div>
@@ -18,8 +17,9 @@ function CardItem(props) {
                     </div>
                 </div>
             </li>
-
     );
 }
-
 export default CardItem;
+
+
+

@@ -24,9 +24,7 @@ function Cards() {
                   return   item;
                 })
                 setDistrito(distritos);
-
             });
-
         /*       distritos.map((it)=> {
          fetch("https://goweather.herokuapp.com/weather/"+it.local)
                   .then((res) => res.json())
@@ -35,20 +33,13 @@ function Cards() {
                           temp2.push("não disponível")
                       } else {
                           temp2.push(weather.temperature)
-
-
                       }
                       console.log(temp2)
                       setTemp(temp2)
-
                   });
-
               // console.log(distritos)
-
         return it;
-
        });  */
-
     }, []);
 
    // let cidade = distrito[2]

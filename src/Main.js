@@ -10,10 +10,8 @@ import CardsDetails from "./CardsDetails";
 
 function Main() {
     return (
-
         <Router>
             <Nav></Nav>
-
             <Routes>
                 <Route path='/' element={<Cards/>}/>
                 <Route path='/Home' element={<Cards/>}/>
@@ -23,7 +21,6 @@ function Main() {
             </Routes>
             <Footer></Footer>
         </Router>
-
     );
 }
 
