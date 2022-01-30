@@ -53,6 +53,13 @@
   color: white;
 }
 
+.imgnav {
+  width: 130px;
+  position: absolute;
+  left: 30px;
+  bottom: 20px;
+}
+
 .textofooter {
   color: white;
   text-decoration: none;
